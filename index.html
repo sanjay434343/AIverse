@@ -49,7 +49,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin: 20px auto;
+            margin: 20px;
             padding: 20px;
             max-width: 900px;
             background-color: #fff;
@@ -97,17 +97,19 @@
 
         .text-card button {
             padding: 10px 20px;
-            font-size: 1rem;
+            font-size: 16px;
             background-color: #333;
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, box-shadow 0.1s ease-in-out;
+            box-shadow: 4px 4px black;
         }
 
-        button:hover {
-            background-color: #555;
+        .text-card button:active {
+            box-shadow: 2px 2px black;
+            transform: translate(2px, 2px);
         }
 
         .top {
