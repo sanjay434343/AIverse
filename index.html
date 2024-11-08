@@ -3,77 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nanosa - Discover AI</title>
-    <meta name="description" content="Explore innovations in AI and machine learning.">
-    <meta name="keywords" content="Nanosa, AI, artificial intelligence, machine learning, technology">
+    <title>AIverse - Discover the World of Artificial Intelligence</title>
+    <meta name="description" content="Welcome to Nanosa, your gateway to the latest in AI technology, innovations, and insights. Explore the limitless possibilities of artificial intelligence and machine learning with us.">
+    <meta name="keywords" content="5114 Nanosa AI,Sanjayy Nanosa AI ,Nanosa, artificial intelligence, AI, machine learning, technology, innovations, future tech, data science, neural networks">
     <meta name="author" content="Nanosa Team">
-    <link rel="icon" href="logo.png" type="image/x-icon">
-
-    <!-- Open Graph Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="logo.png " type="image/x-icon">
+    <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Nanosa - Discover AI">
-    <meta property="og:description" content="Innovations in AI and machine learning.">
-    <meta property="og:image" content="logo.jpg">
+    <meta property="og:title" content="Nanosa AI - Discover the World of Artificial Intelligence">
+    <meta property="og:description" content="Explore the latest advancements in artificial intelligence and machine learning. Dive into AI technology, future innovations, and data-driven insights.">
+    <meta property="og:image" content="logo.jpg"> <!-- Replace with your image URL -->
     <meta property="og:url" content="https://github.com/sanjay434343/">
     <meta property="og:site_name" content="Nanosa AI">
-
+    
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nanosa - Discover AI">
-    <meta name="twitter:description" content="Explore innovations in AI and machine learning.">
-
-    <!-- Font Links -->
+    <meta name="twitter:title" content="Nanosa AI - Discover the World of Artificial Intelligence">
+    <meta name="twitter:description" content="Welcome to Nanosa, where artificial intelligence meets innovation. Stay updated with the latest in AI and machine learning.">
+    
+    <!-- Preconnect and Font Links -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Anton&family=Bowlby+One&family=Chokokutai&family=DM+Serif+Text:ital@0;1&family=Dongle&family=Gowun+Dodum&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Shrikhand&family=Staatliches&family=Tangerine:wght@400;700&family=Tiny5&family=Yesteryear&display=swap" rel="stylesheet">
+    
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <title>AIverse</title>
     <style>
-        * {
-            box-sizing: border-box;
-        }
         body, html {
-            margin: 0;
+            margin-bottom: 10px;
             padding: 0;
             height: 100%;
-            font-family: 'Playfair Display', serif;
             background-color: #f8f8f8;
-            color: #333;
+            scroll-behavior: smooth;
         }
 
-        /* Responsive Layout */
         .container {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            justify-content: space-between;
+            align-items: stretch;
+            padding: 0px;
+            border-radius: 20px;
+            gap: 20px;
+            background-color: rgb(255, 255, 255);
             margin: 20px;
-            padding: 20px;
-            max-width: 900px;
-            background-color: #fff;
-            border: 2px solid #333;
-            border-radius: 15px;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            height: 200px;
+            padding-right: 20px;
+            color: black;
+            border: 4px solid black;
+            box-shadow: 4px -4px  black;
         }
 
         .video-card {
-            position: relative;
-            width: 100%;
-            height: 200px;
+            flex: 1;
+            height: 100%;
+            margin: 0;
+            position: relative; /* To position the text absolutely within the card */
+            left: -10px;
         }
 
-        .video-title {
-            position: absolute;
-            top: 50%;
+        /* Text above the video using z-index */
+        .video-card .video-title {
+            position: absolute; /* Position the text above the video */
+            top: 38%; /* Adjust position from top */
+            left: 0;
             width: 100%;
-            color: #fff;
-            font-size: 1.5rem;
-            font-weight: bold;
+            color: white;
+            font-size: 16px;
             text-align: center;
-            transform: translateY(-50%);
-            z-index: 2;
+            z-index: 10; /* Ensure text is above the video */
+            background-color: rgba(0, 0, 0, 0); /* Optional: add background to make text more readable */
+            padding: 5px;
+            font-size: 30px;
+            font-weight: 1000;
+            
         }
 
         .video-card video {
@@ -81,70 +85,72 @@
             height: 100%;
             object-fit: cover;
             border-radius: 10px;
-            filter: blur(5px);
-            z-index: 1;
+            z-index: 1; /* Ensure video is below the text */
+            filter: blur(8px);
+       
         }
 
         .text-card {
-            text-align: center;
-            padding: 20px;
+            flex: 1;
+            max-width: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .text-card h2 {
-            font-size: 1.8rem;
-            margin: 10px 0;
+            font-size: 24px;
+            margin-bottom: 2%;
+            color: rgb(0, 0, 0);
+            position: relative;
+          
+        }
+
+        .text-card p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: rgb(3, 3, 3);
+            position: relative;
+            top: 18px;
         }
 
         .text-card button {
             padding: 10px 20px;
             font-size: 16px;
-            background-color: #333;
-            color: #fff;
-            border: none;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: 4px solid black;
+            box-shadow: 4px 4px black;
             border-radius: 5px;
             cursor: pointer;
+            margin: 15px;
+            margin-bottom: 20px;
             transition: background-color 0.3s, box-shadow 0.1s ease-in-out;
-            box-shadow: 4px 4px black;
+            position: relative;
+            right: 20px;
+            bottom: 7px;
+            font-weight: 1000;
         }
 
         .text-card button:active {
             box-shadow: 2px 2px black;
             transform: translate(2px, 2px);
         }
-
         .top {
+            position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             width: 100%;
-            height: 90vh;
-            color: #fff;
-            position: relative;
+            height: 98vh;
+            color: white;
+            z-index: 1;
+            overflow: hidden;
         }
 
-        .top h1 {
-            font-size: 3rem;
-            margin: 20px 0;
-        }
-
-        .top p {
-            font-size: 1.5rem;
-        }
-
-        .top a {
-            color: #fff;
-            font-size: 2rem;
-            margin-top: 20px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .top a:hover {
-            color: #ddd;
-        }
-
+        /* Full-screen background video styling */
         .video-bg {
             position: absolute;
             top: 0;
@@ -153,25 +159,41 @@
             height: 100%;
             object-fit: cover;
             z-index: -1;
-            opacity: 0.6;
+            opacity: 0.6; /* Adjust opacity for better text readability */
         }
 
-        /* Media Queries for Responsive Design */
-        @media (max-width: 768px) {
-            .video-title {
-                font-size: 1.2rem;
-            }
-
-            .text-card h2 {
-                font-size: 1.5rem;
-            }
-
-            .text-card button {
-                font-size: 0.9rem;
-                padding: 8px 16px;
-            }
+        /* Text and link styling */
+        .top p {
+            font-size: 24px;
+            margin: 0;
         }
-    </style>>
+
+        .top h1 {
+            font-size: 30px;
+            margin: 10px 0;
+        }
+
+        .top a {
+            color: white;
+            font-size: 40px;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        .top a:hover {
+            color: #ddd;
+        }
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.6; /* Adjust opacity for better text readability */
+        }
+    </style>
 </head>
 <body>
 
@@ -259,7 +281,7 @@
 
 <div class="container">
     <div class="video-card">
-        <div class="video-title" style="margin-:top-10px">Fable<br>Flow</div>
+        <div class="video-title" style="margin-:top-10px">FableFlow</div>
         <video autoplay muted loop>
             <source src="https://cdn.pixabay.com/video/2023/07/04/170043-842720124_large.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -276,7 +298,7 @@
 
 <div class="container">
     <div class="video-card">
-        <div class="video-title" style="margin-:top-10px">Pixel<br>Forge</div>
+        <div class="video-title" style="margin-:top-10px">PixelForge</div>
         <video autoplay muted loop>
             <source src="https://cdn.pixabay.com/video/2023/07/21/172655-847860558_tiny.mp4" type="video/mp4">
             Your browser does not support the video tag.
