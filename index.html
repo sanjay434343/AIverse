@@ -1,529 +1,213 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nanosa - Discover the World of Artificial Intelligence</title>
     <meta name="description" content="Welcome to Nanosa, your gateway to the latest in AI technology, innovations, and insights. Explore the limitless possibilities of artificial intelligence and machine learning with us.">
-    <meta name="keywords" content="5114 Nanosa AI,Sanjayy Nanosa AI ,Nanosa, artificial intelligence, AI, machine learning, technology, innovations, future tech, data science, neural networks">
-    <meta name="author" content="Nanosa Team">
-    <meta name="robots" content="index, follow">
-    <link rel="icon" href="logo.png " type="image/x-icon">
-    <!-- Open Graph / Facebook Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Nanosa AI - Discover the World of Artificial Intelligence">
-    <meta property="og:description" content="Explore the latest advancements in artificial intelligence and machine learning. Dive into AI technology, future innovations, and data-driven insights.">
-    <meta property="og:image" content="logo.jpg"> <!-- Replace with your image URL -->
-    <meta property="og:url" content="https://github.com/sanjay434343/">
-    <meta property="og:site_name" content="Nanosa AI">
-    <meta name="google-site-verification" content="OuwjM6qC9L_Lc_th_9_fER696aU_fN0yyJgjpokrvFs" />
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nanosa AI - Discover the World of Artificial Intelligence">
-    <meta name="twitter:description" content="Welcome to Nanosa, where artificial intelligence meets innovation. Stay updated with the latest in AI and machine learning.">
-    
-    <!-- Preconnect and Font Links -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <title>AIverse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-
-        @font-face {
-            font-family: 'AzoraFreeDemo';
-            src: url('AzoraFreeDemo-V40y0.otf') format('opentype');
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-25%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
+            50% { transform: translateY(0); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
         }
-        
-        @font-face {
-            font-family: 'MercusuarThin';
-            src: url('MercusuarThin-9Y1a2.ttf') format('truetype');
-        }
-        
-        @font-face {
-            font-family: 'BoldMarker';
-            src: url('BoldMarker-vmonA.ttf') format('truetype');
-        }
-        
-
-       
-        body, html {
-            margin-bottom: 10px;
-            padding: 0;
-            height: 100%;
-            background-color: #f0f0f0;
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: stretch;
-            padding: 0px;
-            border-radius: 20px;
-            gap: 20px;
-            background-color: rgb(255, 255, 255);
-            margin: 20px;
-            height: 200px;
-            
-            padding-right: 20px;
-            color: black;
-            border: 4px solid black;
-            box-shadow: 4px -4px  black;
-        }
-
-        .video-card {
-            flex: 1;
-            height: 100%;
-            margin: 0;
-            position: relative; /* To position the text absolutely within the card */
-            left: -10px;
-        }
-
-        /* Text above the video using z-index */
-        .video-card .video-title {
-            position: absolute; /* Position the text above the video */
-            top: 38%; /* Adjust position from top */
-            left: 0;
-            width: 100%;
-            color: white;
-            text-align: center;
-            z-index: 10; /* Ensure text is above the video */
-            background-color: rgba(0, 0, 0, 0); /* Optional: add background to make text more readable */
-            padding: 5px;
-            font-size: 22px;
-            font-weight: 1000;
-            
-        }
-
-       
-
-        .text-card {
-            flex: 1;
-            max-width: 45%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .text-card h2 {
-            font-family: 'BoldMarker';
-            font-size: 20px;
-            margin-bottom: 2%;
-            color: rgb(0, 0, 0);
-            position: relative;
-        }
-        
-
-        .text-card p {
-            font-size: 16px;
-            margin-bottom: 20px;
-            color: rgb(3, 3, 3);
-            position: relative;
-            top: 18px;
-        }
-
-        .text-card button {
-            width: 100% ;
-            padding: 10px 20px;
-            font-size: 15px;
-            background-color: #ffffff;
-            color: rgb(0, 0, 0);
-            border: 4px solid black;
-            box-shadow: 4px 4px black;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 15px;
-            margin-bottom: 20px;
-            transition: background-color 0.3s, box-shadow 0.1s ease-in-out;
-            position: relative;
-            right: 20px;
-            bottom: 7px;
-            font-weight: 1000;
-        }
-
-        .text-card button:active {
-            box-shadow: 2px 2px black;
-            transform: translate(2px, 2px);
-        }
-        .top {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            width: 100%;
-            height: 96vh;
-            color: white;
-            z-index: 1;
-            overflow: hidden;
-            backdrop-filter: blur(100px);
-        }
-
-        /* Full-screen background video styling */
-        .video-bg {
+        .animate-bounce { animation: bounce 1s infinite; }
+        #particles-js {
             position: absolute;
+            width: 100%;
+            height: 100%;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            opacity: 0.6; /* Adjust opacity for better text readability */
+            z-index: 1;
         }
-
-        /* Text and link styling */
-        .top p {
-            font-family: 'MercusuarThin', serif;
-
-            font-size: 24px;
-            margin: 0;
-        }
-
-
-        .top h1 {
-            font-size: 60px;
-            margin: 10px 0;
-            font-family: 'AzoraFreeDemo';
-            letter-spacing: 3px;
-            font-weight: 1000;
-            overflow: hidden; /* Prevents text from spilling over */
-            white-space: nowrap; /* Prevents the text from wrapping */
-            max-width: 100%; /* Ensure the width doesn't extend beyond the text */
-        }
-        
-       
-
-        
-        
-        .top a {
-            color: white;
-            font-size: 40px;
-            margin-top: 20px;
-            text-decoration: none;
-        }
-
-        .top a:hover {
-            color: #ddd;
-        }
-       
-        .left-side {
-            flex: 1; /* Takes up 50% of the width */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .gradient-bg {
-            width: 100%;
-            height: 100%;
-            background-size: 400% 400%;
-            animation: gradientAnimation 1s ease infinite;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-
-        .one {
-            background: linear-gradient(45deg, #ff6ec4, #7873f5, #47b4eb, #47e5bc);
-            background-size: 400% 400%;
-            animation: gradientAnimation 2s ease infinite;
-        }
-        
-        .two {
-            background: linear-gradient(45deg, #ff9a8b, #bbffbc, #ff99ac);
-            background-size: 400% 400%;
-            animation: gradientAnimation 8s ease infinite;
-        }
-        
-        .three {
-            background: linear-gradient(45deg, #4facfe, #e6f8ff , #75c3ff);
-            background-size: 400% 400%;
-            animation: gradientAnimation 8s ease infinite;
-        }
-        
-        .foure {
-            background: linear-gradient(45deg, #ffdbc9, #ff5e62);
-            background-size: 400% 400%;
-            animation: gradientAnimation 2s ease infinite;
-        }
-        
-        .five {
-            background: linear-gradient(45deg, #a18cd1, #fbc2eb);
-            background-size: 400% 400%;
-            animation: gradientAnimation 2s ease infinite;
-        }
-        
-        .six {
-            background: linear-gradient(45deg, #f7797d, #FBD786, #C6FFDD);
-            background-size: 400% 400%;
-            animation: gradientAnimation 2s ease infinite;
-        }
-        
-        .seven {
-            background: linear-gradient(45deg, #ffecd2, #fcb69f , #C6FFDD);
-            background-size: 400% 400%;
-            animation: gradientAnimation 2s ease infinite;
-        }
-        .eight {
-    background: linear-gradient(45deg, #f7971e, #ffd200, #f05454, #30475e, #222831);
-    background-size: 400% 400%;
-    animation: gradientAnimation 2s ease infinite;
-}
-
-        .nine{
-         background: linear-gradient(45deg, #00c6ff, #0072ff, #1f4037, #99f2c8, #38ef7d);
-    background-size: 400% 400%;
-    animation: gradientAnimation 2s ease infinite;
-        }
-
-        .ten{
- background: linear-gradient(45deg, #3a1c71, #d76d77, #ffaf7b, #ffecd2, #8e2de2);
-    background-size: 400% 400%;
-    animation: gradientAnimation 2s ease infinite;
-}
-
-        .eleven{
-
-             background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #fcb69f, #ffecd2);
-    background-size: 400% 400%;
-    animation: gradientAnimation 2s ease infinite;
-            
-        }
-
-        
-         .top {
-    background: linear-gradient(45deg, #f06, #48c6ef, #6a11cb); /* Neon pink, blue, purple */
-    background-size: 600% 600%;
-    animation: gradientAnimation 10s ease infinite;
-    border-radius: 30px;
-}
-
-
-    @keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-
-
-
-        
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        /* Right side content */
-        .right-side {
-            flex: 1; /* Takes up 50% of the width */
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: white;
-            color: #333;
-        }
-        
-        .video-title {
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
-            z-index: 10;
-        }
-        
-        .about{
-            background-color: #ffffff;
-           width: auto;
-            max-height: 500px;
-            margin: 20px;
-            border-radius: 30px;
-          display: grid;
-            text-align: left;
-            border: 4px solid black;
-            box-shadow: 8px 4px  black;
-            transition: 1s ease-in-out;
-        }
-
-        .abt-t{
-            margin: 15px;
-            margin-bottom: 0px;
-            color: rgb(55, 55, 55);
-        }
-
-        .abt{
-            margin: 15px;
-            color: rgb(55, 55, 55);
-        
-        }
-
-        .about {
-            background: linear-gradient(45deg, rgb(229, 229, 229), #e9e9e9, #ffffff); /* Neon pink, blue, purple */
-            background-size: 600% 600%;
-            animation: gradientAnimation 10s ease infinite;
-            border-radius: 30px;
-        }
-        
-        .about:hover{
-            scale: 1.02;
-            box-shadow: 12px 12px  rgba(0, 0, 0, 0.533);
-
-        }
-        
     </style>
 </head>
-<body>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+    <header class="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        <div id="particles-js"></div>
+        <div class="z-10 opacity-0 transform translate-y-4 transition-all duration-1000 ease-out" id="hero-content">
+            <h1 class="text-4xl sm:text-6xl font-bold mb-4">Welcome to Nanosa</h1>
+            <p class="text-xl mb-8">Discover the future of AI-powered tools</p>
+            <a href="#about" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition duration-300">
+                Learn More
+            </a>
+        </div>
+        <div class="absolute bottom-10 opacity-0 transition-opacity duration-1000 ease-out z-10" id="scroll-indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 animate-bounce text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-700 opacity-75 z-0"></div>
+    </header>
 
-    <div class="top">
-       
-        <!-- Centered Content -->
-        <p>Welcome to</p>
-        <h1>Nanosa</h1>
-        <a href="#container"><i class="fa-solid fa-sort-down"></i></a>
-    </div>
+    <main class="container mx-auto px-4 py-16">
+        <section id="about" class="mb-20 opacity-0 transform translate-y-4 transition-all duration-1000 ease-out">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6" id="about">About Nanosa</h2>
+            <p class="text-lg leading-relaxed">
+                Welcome to NANOSA! We've built this platform using Gemini AI to bring you smart, interactive experiences.
+                Powered by the Gemini API, NANOSA offers innovative features designed to make your experience seamless and enjoyable.
+                Explore, create, and discover the future of AI with us!
+            </p>
+        </section>
+
+        <section class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" id="ai-tools">
+            <!-- AI tools will be dynamically inserted here -->
+        </section>
+
+        <section id="subscribe" class="mt-20 opacity-0 transform translate-y-4 transition-all duration-1000 ease-out">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">Subscribe to Our Newsletter</h2>
+            <form id="subscribe-form" class="max-w-md mx-auto">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required
+                           class="flex-grow px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-800">
+                    <button type="submit"
+                            class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition duration-300">
+                        Subscribe
+                    </button>
+                </div>
+            </form>
+            <p id="subscribe-message" class="mt-4 text-center hidden"></p>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-20">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2023 Nanosa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     
-    <div class="about">
-        <h1 class="abt-t">    About Nanosa</h1>
-<p class="abt">
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
+    <script>
+        const aiTools = [
+            { name: 'Quanta', description: 'Generative chat AI', url: 'https://quantaa.glitch.me/', gradient: 'from-pink-500 to-purple-500' },
+            { name: 'Flavors & Facts', description: 'Recipe Generative AI', url: 'https://flavorsfacts.glitch.me/', gradient: 'from-green-400 to-blue-500' },
+            { name: 'ClearCut', description: 'Summarizer Generative AI', url: 'https://clearcuts.glitch.me/', gradient: 'from-blue-400 to-indigo-500' },
+            { name: 'Stanza', description: 'Poem Generative AI', url: 'https://stanza.glitch.me/', gradient: 'from-red-500 to-yellow-500' },
+            { name: 'FableFlow', description: 'Story Generative AI', url: 'https://fableflow.glitch.me', gradient: 'from-purple-400 to-pink-500' },
+            { name: 'PixelForge', description: 'Code generator AI', url: 'https://pixelforge.glitch.me/', gradient: 'from-yellow-400 to-orange-500' },
+            { name: 'Nash', description: 'Speaking Partner AI', url: 'https://nashh.glitch.me/', gradient: 'from-teal-400 to-blue-500' },
+            { name: 'PagePics', description: 'AI Book Suggestion', url: 'https://pagepicks.netlify.app/', gradient: 'from-orange-500 to-red-500' },
+            { name: '0waste', description: 'Waste to DIY project', url: 'https://0waste.netlify.app/', gradient: 'from-green-500 to-teal-500' },
+            { name: 'AasaiPath', description: 'Travel companion AI', url: 'https://aasaipath.netlify.app/', gradient: 'from-purple-500 to-indigo-500' },
+            { name: 'SparkPad', description: 'AI powered notepad', url: 'https://sparkpad.netlify.app/', gradient: 'from-pink-400 to-red-500' },
+        ];
 
-    Welcome to NANOSA! We've built this platform using Gemini AI to bring you smart, interactive experiences. Powered by the Gemini API, NANOSA offers innovative features designed to make your experience seamless and enjoyable. Explore, create, and discover the future of AI with us!</p>
+        function createAIToolCard(tool, index) {
+            const card = document.createElement('div');
+            card.className = `bg-gradient-to-br ${tool.gradient} rounded-lg shadow-lg overflow-hidden opacity-0 transform translate-y-4 transition-all duration-500 ease-out`;
+            card.style.transitionDelay = `${index * 100}ms`;
+            card.innerHTML = `
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-white mb-2">${tool.name}</h3>
+                    <p class="text-white mb-4">${tool.description}</p>
+                    <a href="${tool.url}" target="_blank" rel="noopener noreferrer" class="inline-block bg-white text-gray-900 px-4 py-2 rounded-full hover:bg-gray-100 transition duration-300">
+                        Try it out
+                    </a>
+                </div>
+            `;
+            return card;
+        }
 
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
 
-    </div>
+        function handleScroll() {
+            const elements = document.querySelectorAll('.opacity-0');
+            elements.forEach(el => {
+                if (isElementInViewport(el)) {
+                    el.classList.remove('opacity-0', 'translate-y-4');
+                    el.classList.add('opacity-100', 'translate-y-0');
+                }
+            });
+        }
 
-    <div class="container" id="container" style="margin-top: 30px;">
-        <div class="left gradient-bg one">
-            <div class="video-title">Quanta</div>
-        </div>
-        <div class="right text-card">
-            <h2>Generative chat AI</h2>
-            <button onclick="window.location.href='https://quantaa.glitch.me/'">Jump In</button>
-        </div>
-    </div>
-    
-   
-    <div class="container">
-        <div class="left gradient-bg two">
-            <div class="video-title">Flavors & Facts</div>
-        </div>
-        <div class="right text-card">
-            <h2>Recipe Generative AI</h2>
-            <button onclick="window.location.href='https://flavorsfacts.glitch.me/'">Jump In</button>
-        </div>
-    </div>
-    
-    <div class="container">
-        <div class="left gradient-bg three">
-            <div class="video-title">ClearCut</div>
-        </div>
-        <div class="right text-card">
-            <h2>Summarizer Generative AI</h2>
-            <button onclick="window.location.href='https://clearcuts.glitch.me/'">Jump In</button>
-        </div>
-    </div>
-    
-    <div class="container">
-        <div class="left gradient-bg foure">
-            <div class="video-title">Stanza</div>
-        </div>
-        <div class="right text-card">
-            <h2>Poem Generative AI</h2>
-            <button onclick="window.location.href='https://stanza.glitch.me/'">Jump In</button>
-        </div>
-    </div>
-    
-    <div class="container">
-        <div class="left gradient-bg five">
-            <div class="video-title">FableFlow</div>
-        </div>
-        <div class="right text-card">
-            <h2>Story Generative AI</h2>
-            <button onclick="window.location.href='https://fableflow.glitch.me'">Jump In</button>
-        </div>
-    </div>
-    
-    <div class="container">
-        <div class="left gradient-bg six">
-            <div class="video-title">PixelForge</div>
-        </div>
-        <div class="right text-card">
-            <h2>Code generator AI</h2>
-            <button onclick="window.location.href='https://pixelforge.glitch.me/'">Jump In</button>
-        </div>
-    </div>
+        document.addEventListener('DOMContentLoaded', () => {
+            const aiToolsContainer = document.getElementById('ai-tools');
+            aiTools.forEach((tool, index) => {
+                const card = createAIToolCard(tool, index);
+                aiToolsContainer.appendChild(card);
+            });
 
-     
-    <div class="container">
-        <div class="left gradient-bg seven">
-            <div class="video-title">Nash</div>
-        </div>
-        <div class="right text-card">
-            <h2>Speaking Partner AI</h2>
-            <button onclick="window.location.href='https://nashh.glitch.me/'">Jump In</button>
-        </div>
-    </div>
+            setTimeout(() => {
+                document.getElementById('hero-content').classList.remove('opacity-0', 'translate-y-4');
+                document.getElementById('hero-content').classList.add('opacity-100', 'translate-y-0');
+                document.getElementById('scroll-indicator').classList.remove('opacity-0');
+                document.getElementById('scroll-indicator').classList.add('opacity-100');
+            }, 500);
 
-  <div class="container">
-        <div class="left gradient-bg eight">
-            <div class="video-title">PagePics</div>
-        </div>
-        <div class="right text-card">
-            <h2>AI Book Suggetion</h2>
-            <button onclick="window.location.href='https://pagepicks.netlify.app/'">Jump In</button>
-        </div>
-    </div>
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
 
-    <div class="container">
-        <div class="left gradient-bg nine">
-            <div class="video-title">0waste</div>
-        </div>
-        <div class="right text-card">
-            <h2>Waste to DIY project</h2>
-            <button onclick="window.location.href=' https://0waste.netlify.app/'">Jump In</button>
-        </div>
-    </div>
+            // Initialize Firebase
+            const firebaseConfig = {
+                apiKey: "AIzaSyC-nKyC-hpcOj1e0IKMh9E8VqOKvkKr3L4",
+                authDomain: "chatzi-96d60.firebaseapp.com",
+                databaseURL: "https://chatzi-96d60-default-rtdb.firebaseio.com",
+                projectId: "chatzi-96d60",
+                storageBucket: "chatzi-96d60.appspot.com",
+                messagingSenderId: "8860860390",
+                appId: "1:8860860390:android:9583a63e784a116e3c6027"
+            };
+            firebase.initializeApp(firebaseConfig);
 
- <div class="container">
-        <div class="left gradient-bg ten">
-            <div class="video-title">AasaiPath</div>
-        </div>
-        <div class="right text-card">
-            <h2>Travel companion AI</h2>
-            <button onclick="window.location.href='  https://aasaipath.netlify.app/'">Jump In</button>
-        </div>
-    </div>
+            // Handle form submission
+            const subscribeForm = document.getElementById('subscribe-form');
+            const subscribeMessage = document.getElementById('subscribe-message');
 
+            subscribeForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = document.getElementById('email').value;
+                
+                firebase.database().ref('subscribers').push({
+                    email: email,
+                    timestamp: firebase.database.ServerValue.TIMESTAMP
+                })
+                .then(() => {
+                    subscribeMessage.textContent = 'Thank you for subscribing!';
+                    subscribeMessage.classList.remove('hidden', 'text-red-500');
+                    subscribeMessage.classList.add('text-green-500');
+                    subscribeForm.reset();
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    subscribeMessage.textContent = 'An error occurred. Please try again.';
+                    subscribeMessage.classList.remove('hidden', 'text-green-500');
+                    subscribeMessage.classList.add('text-red-500');
+                });
+            });
 
-     <div class="container">
-        <div class="left gradient-bg eleven">
-            <div class="video-title">SparkPad</div>
-        </div>
-        <div class="right text-card">
-            <h2>Ai powered notepad</h2>
-            <button onclick="window.location.href='https://sparkpad.netlify.app/'">Jump In</button>
-        </div>
-    </div>
-
-
-<br>
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
-
-
+            // Initialize particles.js
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: "#ffffff" },
+                    shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 } },
+                    opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
+                    size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+                    line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+                    move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+                    modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+                },
+                retina_detect: true
+            });
+        });
+    </script>
 </body>
 </html>
