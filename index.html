@@ -1,346 +1,365 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nanosa - AI Innovations Platform</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Nanosa AI - Advanced AI Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        :root {
-            --primary-light: #3B82F6;
-            --primary-dark: #2563EB;
-            --secondary-light: #10B981;
-            --secondary-dark: #059669;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Inter', 'system-ui', sans-serif;
-        }
-        .theme-light {
-            background-color: #F3F4F6;
-            color: #1F2937;
-        }
-        .theme-dark {
-            background-color: #000000;
-            color: #F9FAFB;
-        }
-        .bg-primary {
-            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-dark) 100%);
-        }
-        .text-primary {
-            color: var(--primary-light);
-        }
-        .transition-all {
-            transition: all 0.3s ease-in-out;
-        }
-        .hover-lift {
-            transition: transform 0.3s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-10px);
-        }
-        .glass-morphism {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.125);
-        }
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-        #theme-icon {
-           color: black;
-        }
-
-       
-
-
-        @media screen and (max-width: 768px) {
-            .nv{
-                margin-right: 40px;
-            }  
-
-        }
-
-        .tx{
-            font-size: 12px;
-        }
-
-        .ti{
-            color: #ff8800;
-            margin-bottom: 10px
-        }
-
-        
-    </style>
 </head>
-<body class="theme-light bg-gray-50 text-gray-900">
-    <!-- Theme Toggle -->
-    <div class="fixed top-4 right-4 z-50 m-19 toggle">
-        <button id="theme-toggle" class="bg-gray-200 p-2 rounded-full w-10">
-            <i id="theme-icon" class="ri-sun-line"></i>
-        </button>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <img src="https://t3.ftcdn.net/jpg/03/26/90/26/240_F_326902696_08pXAeNMU6VuWldJ7GjMWGK6Hg8an4id.jpg" alt="Nanosa Logo" class="h-10 w-10 rounded-full">
-                <span class="text-2xl font-bold text-primary">Nanosa</span>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light  shadow-sm">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <div id="userWelcome" class="userwelcome">
+                    <img id="userProfilePic" src="" alt="Profile Picture" class="rounded-circle">
+                    <span id="userName"> User</span>
+                </div>
+                <ul class="navbar-nav" style="margin-left: 10px;">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item" style="margin-top: -4px; ">
+                        <a class="nav-link" href="#tools">Try Nanosa AI</a>
+                    </li>
+                </ul>
+                <button id="signOutBtn" class="btn nav-link text-danger ml-auto" >Sign Out</button>
             </div>
-          
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="relative min-h-screen flex items-center justify-center text-center px-4 pt-20">
-        <div class="container mx-auto">
-                <h1 class="text-primary  tt" style="font-size: clamp(4rem, 5vw, 5rem);  line-height: 1.2; margin-bottom:10px;">
-                    <span class="ti">Nanosa</span> AI Solutions
-                </h1>
-            
-            
-            <p class="text-gray-600 max-w-3xl mx-auto mb-10 tx">
-                Transform your workflow with Nanosa's intelligent AI solutions         </p>
-            <div class="flex justify-center space-x-4">
-                <a href="#tools" class="bg-primary text-white px-8 py-3 rounded-full hover:opacity-90 transition">
-                    Explore
-                </a>
-                <a href="#features" class="border-2 border-primary text-primary px-8 py-3 rounded-full hover:bg-primary hover:text-white transition">
-                    More
-                </a>
-            </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- Features Section -->
-    <section id="features" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16 text-primary">Our Core Features</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
-                    <div class="text-5xl text-blue-500 mb-4">
-                        <i class="ri-brain-line"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-primary">Intelligent Solutions</h3>
-                    <p class="text-gray-600">
-                        Advanced AI algorithms that learn and adapt to solve complex challenges across multiple domains.
-                    </p>
+    <!-- Loader -->
+    <div id="loader" class="loader d-none"></div>
+    
+    <!-- Modal Structure -->
+    <div class="modal" id="exploreModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Explore Access</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
-                    <div class="text-5xl text-green-500 mb-4">
-                        <i class="ri-database-2-line"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-primary">Data Insights</h3>
-                    <p class="text-gray-600">
-                        Transform raw data into actionable intelligence with our sophisticated machine learning models.
-                    </p>
+                <div class="modal-body">
+                    <p id="modalMessage"></p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
-                    <div class="text-5xl text-purple-500 mb-4">
-                        <i class="ri-robot-line"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-primary">Custom AI</h3>
-                    <p class="text-gray-600">
-                        Tailored AI solutions designed to meet your unique business and technological challenges.
-                    </p>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="loginButton">Login</button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- AI Tools Section -->
-    <section id="tools" class="py-20">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16 text-primary">Our AI Tools</h2>
-            <div class="grid md:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
-                    <div class="text-5xl mb-4 text-pink-500 flex justify-center">
+    <main>
+        <section id="hero">
+    
+            <div class="hero-content">
+                <h1 class="nanosa-ai-text">Meet <span class="spa">Nanosa AI</span></h1>
+                <p>Explore the future of artificial intelligence with cutting-edge tools and technologies.</p>
+                <div class="hero-buttons">
+                    <button class="primary-button">Get Started</button>
+                    <button class="secondary-button">Learn More</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="section-header">
+                <h2>Cutting-edge AI Features</h2>
+                <p>Discover what makes our AI tools unique</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Advanced AI Models</h3>
+                    <p>State-of-the-art language models trained on diverse datasets</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Real-time Processing</h3>
+                    <p>Lightning-fast responses with minimal latency</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Enterprise Security</h3>
+                    <p>Bank-grade encryption and data protection</p>
+                </div>
+               
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="section-header">
+                <h2>About Nanosa AI</h2>
+                <p>Nanosa AI is at the forefront of artificial intelligence innovation, providing cutting-edge solutions to enhance productivity and creativity.</p>
+                <p>Our mission is to harness the power of AI to transform industries and improve lives. We offer a suite of AI tools designed to empower users with the latest advancements in technology.</p>
+          
+            </div>
+
+        </section>
+
+        <section id="tools">
+            <div class="section-header">
+                <h2>AI Tools Suite</h2>
+                <p>Explore our collection of powerful AI tools</p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="ri-chat-3-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-primary">Quanta</h3>
-                    <p class="text-gray-600 mb-4">Generative Chat AI</p>
-                    <a href="https://quantaa.glitch.me/" target="_blank" class="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-2 rounded-full hover:opacity-90">
-                        Explore
-                    </a>
+                    <h3>Quanta</h3>
+                    <p>Generative Chat AI</p>
+                    <div class="tool-features">
+                        <span>Real-time</span>
+                        <span>Interactive</span>
+                    </div>
+                    <a href="https://quantaa.glitch.me/" target="_blank" class="tool-button pink-gradient explore-btn">Explore</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
-                    <div class="text-5xl mb-4 text-green-500 flex justify-center">
+
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="ri-restaurant-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-primary">Flavors & Facts</h3>
-                    <p class="text-gray-600 mb-4">Recipe Generative AI</p>
-                    <a href="https://flavorsfacts.glitch.me/" target="_blank" class="bg-gradient-to-r from-green-400 to-blue-500 text-white px-6 py-2 rounded-full hover:opacity-90">
-                        Explore
-                    </a>
+                    <h3>Flavors & Facts</h3>
+                    <p>Recipe Generative AI</p>
+                    <div class="tool-features">
+                        <span>Recipes</span>
+                        <span>Cooking</span>
+                    </div>
+                    <a href="https://flavorsfacts.glitch.me/" target="_blank" class="tool-button green-gradient explore-btn">Explore</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
-                    <div class="text-5xl mb-4 text-blue-500 flex justify-center">
+
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="ri-file-text-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-primary">ClearCut</h3>
-                    <p class="text-gray-600 mb-4">Summarizer Generative AI</p>
-                    <a href="https://clearcuts.glitch.me/" target="_blank" class="bg-gradient-to-r from-blue-400 to-indigo-500 text-white px-6 py-2 rounded-full hover:opacity-90">
-                        Explore
-                    </a>
+                    <h3>ClearCut</h3>
+                    <p>Summarizer Generative AI</p>
+                    <div class="tool-features">
+                        <span>Summary</span>
+                        <span>Analysis</span>
+                    </div>
+                    <a href="https://clearcuts.glitch.me/" target="_blank" class="tool-button blue-gradient explore-btn">Explore</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
-                    <div class="text-5xl mb-4 text-purple-500 flex justify-center">
+
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="ri-book-read-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-primary">Stanza</h3>
-                    <p class="text-gray-600 mb-4">Poem Generative AI</p>
-                    <a href="https://stanza.glitch.me/" target="_blank" class="bg-gradient-to-r from-red-500 to-yellow-500 text-white px-6 py-2 rounded-full hover:opacity-90">
-                        Explore
-                    </a>
+                    <h3>Stanza</h3>
+                    <p>Poem Generative AI</p>
+                    <div class="tool-features">
+                        <span>Poetry</span>
+                        <span>Creative</span>
+                    </div>
+                    <a href="https://stanza.glitch.me/" target="_blank" class="tool-button purple-gradient explore-btn">Explore</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
-                    <div class="text-5xl mb-4 text-red-500 flex justify-center">
+
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="ri-book-open-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-primary">FableFlow</h3>
-                    <p class="text-gray-600 mb-4">Story Generative AI</p>
-                    <a href="https://fableflow.glitch.me" target="_blank" class="bg-gradient-to-r from-purple-400 to-pink-500 text-white px-6 py-2 rounded-full hover:opacity-90">
-                        Explore
-                    </a>
+                    <h3>FableFlow</h3>
+                    <p>Story Generative AI</p>
+                    <div class="tool-features">
+                        <span>Stories</span>
+                        <span>Creative</span>
+                    </div>
+                    <a href="https://fableflow.glitch.me" target="_blank" class="tool-button red-gradient explore-btn">Explore</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
-                    <div class="text-5xl mb-4 text-yellow-500 flex justify-center">
+
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="ri-code-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-primary">PixelForge</h3>
-                    <p class="text-gray-600 mb-4">Code Generator AI</p>
-                    <a href="https://pixelforge.glitch.me/" target="_blank" class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-2 rounded-full hover:opacity-90">
-                        Explore
-                    </a>
+                    <h3>PixelForge</h3>
+                    <p>Code Generator AI</p>
+                    <div class="tool-features">
+                        <span>Code</span>
+                        <span>Development</span>
+                    </div>
+                    <a href="https://pixelforge.glitch.me/" target="_blank" class="tool-button yellow-gradient explore-btn">Explore</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
-                    <div class="text-5xl mb-4 text-teal-500 flex justify-center">
+
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="ri-user-voice-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-primary">Nash</h3>
-                    <p class="text-gray-600 mb-4">Speaking Partner AI</p>
-                    <a href="https://nashh.glitch.me/" target="_blank" class="bg-gradient-to-r from-teal-400 to-blue-500 text-white px-6 py-2 rounded-full hover:opacity-90">
-                        Explore
-                    </a>
+                    <h3>Nash</h3>
+                    <p>Speaking Partner AI</p>
+                    <div class="tool-features">
+                        <span>Speech</span>
+                        <span>Interactive</span>
+                    </div>
+                    <a href="https://nashh.glitch.me/" target="_blank" class="tool-button teal-gradient explore-btn">Explore</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
-                    <div class="text-5xl mb-4 text-orange-500 flex justify-center">
+
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="ri-book-3-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-primary">PagePics</h3>
-                    <p class="text-gray-600 mb-4">AI Book Suggestion</p>
-                    <a href="https://pagepicks.netlify.app/" target="_blank" class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-2 rounded-full hover:opacity-90">
-                        Explore
-                    </a>
+                    <h3>PagePics</h3>
+                    <p>AI Book Suggestion</p>
+                    <div class="tool-features">
+                        <span>Books</span>
+                        <span>Reading</span>
+                    </div>
+                    <a href="https://pagepicks.netlify.app/" target="_blank" class="tool-button orange-gradient explore-btn">Explore</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
-                    <div class="text-5xl mb-4 text-green-500 flex justify-center">
+
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="ri-recycle-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-primary">0waste</h3>
-                    <p class="text-gray-600 mb-4">Waste to DIY Project</p>
-                    <a href="https://0waste.netlify.app/" target="_blank" class="bg-gradient-to-r from-green-500 to-teal-500 text-white px-6 py-2 rounded-full hover:opacity-90">
-                        Explore
-                    </a>
+                    <h3>0waste</h3>
+                    <p>Waste to DIY Project</p>
+                    <div class="tool-features">
+                        <span>DIY</span>
+                        <span>Eco-friendly</span>
+                    </div>
+                    <a href="https://0waste.netlify.app/" target="_blank" class="tool-button green-gradient explore-btn">Explore</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
-                    <div class="text-5xl mb-4 text-purple-500 flex justify-center">
+
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="ri-road-map-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-primary">AasaiPath</h3>
-                    <p class="text-gray-600 mb-4">Travel Companion AI</p>
-                    <a href="https://aasaipath.netlify.app/" target="_blank" class="bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-6 py-2 rounded-full hover:opacity-90">
-                        Explore
-                    </a>
+                    <h3>AasaiPath</h3>
+                    <p>Travel Companion AI</p>
+                    <div class="tool-features">
+                        <span>Travel</span>
+                        <span>Planning</span>
+                    </div>
+                    <a href="https://aasaipath.netlify.app/" target="_blank" class="tool-button purple-gradient explore-btn">Explore</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
-                    <div class="text-5xl mb-4 text-pink-500 flex justify-center">
+
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="ri-sticky-note-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-primary">SparkPad</h3>
-                    <p class="text-gray-600 mb-4">AI Powered Notepad</p>
-                    <a href="https://sparkpad.netlify.app/" target="_blank" class="bg-gradient-to-r from-pink-400 to-red-500 text-white px-6 py-2 rounded-full hover:opacity-90">
-                        Explore
-                    </a>
+                    <h3>SparkPad</h3>
+                    <p>AI Powered Notepad</p>
+                    <div class="tool-features">
+                        <span>Notes</span>
+                        <span>Writing</span>
+                    </div>
+                    <a href="https://sparkpad.netlify.app/" target="_blank" class="tool-button pink-gradient explore-btn">Explore</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
-                    <div class="text-5xl mb-4 text-yellow-500 flex justify-center">
+
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="ri-file-paper-2-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-primary">Resuma</h3>
-                    <p class="text-gray-600 mb-4">The Resume Scanner</p>
-                    <a href="https://resumaa.netlify.app/" target="_blank" class="bg-gradient-to-r from-yellow-400 to-green-500 text-white px-6 py-2 rounded-full hover:opacity-90">
-                        Explore
-                    </a>
+                    <h3>Resuma</h3>
+                    <p>The Resume Scanner</p>
+                    <div class="tool-features">
+                        <span>Resume</span>
+                        <span>Career</span>
+                    </div>
+                    <a href="https://resumaa.netlify.app/" target="_blank" class="tool-button yellow-gradient explore-btn">Explore</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
-                    <div class="text-5xl mb-4 text-purple-500 flex justify-center">
+
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="ri-mail-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-primary">Letter Box</h3>
-                    <p class="text-gray-600 mb-4">The Letter Generator</p>
-                    <a href="https://ai-letterbox.netlify.app/" target="_blank" class="bg-gradient-to-r from-purple-400 to-red-500 text-white px-6 py-2 rounded-full hover:opacity-90">
-                        Explore
-                    </a>
+                    <h3>Letter Box</h3>
+                    <p>The Letter Generator</p>
+                    <div class="tool-features">
+                        <span>Letters</span>
+                        <span>Writing</span>
+                    </div>
+                    <a href="https://ai-letterbox.netlify.app/" target="_blank" class="tool-button purple-gradient explore-btn">Explore</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
-                    <div class="text-5xl mb-4 text-blue-500 flex justify-center">
+
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="ri-book-read-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-primary">Extractify</h3>
-                    <p class="text-gray-600 mb-4">AI Study Companion</p>
-                    <a href="https://extractify-ai.netlify.app/" target="_blank" class="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-6 py-2 rounded-full hover:opacity-90">
-                        Explore
-                    </a>
+                    <h3>Extractify</h3>
+                    <p>AI Study Companion</p>
+                    <div class="tool-features">
+                        <span>Study</span>
+                        <span>Learning</span>
+                    </div>
+                    <a href="https://extractify-ai.netlify.app/" target="_blank" class="tool-button blue-gradient explore-btn">Explore</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift">
-                    <div class="text-5xl mb-4 text-gray-500 flex justify-center">
+
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="ri-window-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-primary">AIEdify</h3>
-                    <p class="text-gray-600 mb-4">AI Basic Web Editor</p>
-                    <a href="https://aiedify.netlify.app/" target="_blank" class="bg-gradient-to-r from-blue-400 to-gray-500 text-white px-6 py-2 rounded-full hover:opacity-90">
-                        Explore
-                    </a>
+                    <h3>AIEdify</h3>
+                    <p>AI Basic Web Editor</p>
+                    <div class="tool-features">
+                        <span>Web</span>
+                        <span>Editor</span>
+                    </div>
+                    <a href="https://aiedify.netlify.app/" target="_blank" class="tool-button gray-gradient explore-btn">Explore</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-200 py-12">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-gray-600">&copy; 2024 Nanosa. All rights reserved.</p>
-            <div class="flex justify-center space-x-6 mt-6">
-                <a href="https://www.instagram.com/erdaspire?igsh=MWgzcWhtNWJhOWt2aQ==" class="text-gray-600 hover:text-primary"><i class="ri-instagram-line text-2xl"></i></a>
-                <a href="https://www.linkedin.com/in/sanjay-sanjay-b69390287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-600 hover:text-primary"><i class="ri-linkedin-line text-2xl"></i></a>
-                <a href="https://github.com/sanjay434343" class="text-gray-600 hover:text-primary"><i class="ri-github-line text-2xl"></i></a>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Nanosa AI</h4>
+                <p>Building the future of AI technology</p>
             </div>
+            <div class="footer-section">
+                <h4>Links</h4>
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#tools">Tools</a>
+                <a href="#about">About</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <a href="mailto:contact@nanosa.ai">sanjay13649@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nanosa AI. All rights reserved.</p>
         </div>
     </footer>
 
-    <script>
-        // Theme Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-        const body = document.body;
-        
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('theme-light');
-            body.classList.toggle('theme-dark');
-            body.classList.toggle('bg-gray-50');
-            body.classList.toggle('bg-gray-900');
-            body.classList.toggle('text-gray-900');
-            body.classList.toggle('text-gray-100');
-            
-            themeIcon.classList.toggle('ri-sun-line');
-            themeIcon.classList.toggle('ri-moon-line');
-        });
+    <div id="authModal" class="auth-modal">
+        <div class="auth-content">
+            <h2>Sign in to Continue</h2>
+            <p>Please sign in to access Nanosa AI features</p>
+            <button id="googleSignIn" class="google-btn">
+                <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png" alt="Google">
+                Sign in with Google
+            </button>
+        </div>
+    </div>
 
-       
-    </script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
